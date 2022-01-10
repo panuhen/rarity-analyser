@@ -1,6 +1,8 @@
 /*
  * Base structure
  */
+ @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Lilita+One:wght@300&display=swap');
 
  :root {
   --gray-50: #F9FAFB;
@@ -16,8 +18,8 @@
   --white: #FFFFFF;
   --gray: var(--gray-400);
   --black: #000000;
-  --primary: #FF04B4;
-  --primary-dark: #1D1B28;
+  --primary: #0bffbf;
+  --primary-dark: #003399;
   --contrast: #0062F9;
   --danger: #EF4444;
   --red: #F87171;
@@ -36,8 +38,8 @@
   --size-8: 8rem;
   --size-9: 12rem;
   --content-width: 60rem;
-  --font-family-title: 'Space Mono',monospace,-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;
-  --font-family-body: Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;
+  --font-family-title: 'Lilita One',monospace,-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;
+  --font-family-body: 'Nunito',-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;
   --font-size-xs: .409rem;
   --font-size-sm: .6875rem;
   --font-size-base: .8125rem;
@@ -53,7 +55,7 @@
   --line-height-heading: 1.3;
   --line-height-flow: 1.5;
   --text-light: var(--gray);
-  --border-color: var(--gray-700);
+  --border-color: #000066;
   --border-color-dark: var(--primary-dark);
   --border: 1px solid var(--border-color);
   --border-dark: 1px solid var(--border-color-dark);
@@ -71,6 +73,7 @@
 body {
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+  background-color: #0037c1;
   font-family: var(--font-family-body);
   line-height: 1;
   font-weight: var(--font-weight-base);
@@ -83,33 +86,33 @@ body {
 
 .nav-masthead .nav-link {
   padding: .25rem 0;
-  font-weight: 700;
-  color: rgba(255, 255, 255, .5);
+  font-size: 20px;
+  color: rgb(255, 255, 255);
   background-color: transparent;
   border-bottom: .25rem solid transparent;
 }
 
 .nav-masthead .nav-link:hover,
 .nav-masthead .nav-link:focus {
-  border-bottom-color: rgba(255, 255, 255, .25);
+  transition: transform 1s; /* Animation */
+  transform: scale(1.05); /* (105% zoom - Note: if the zoom is too large, it will go outside of the viewport) */;
 }
+
 
 .nav-masthead .nav-link + .nav-link {
   margin-left: 1rem;
 }
 
 .nav-masthead .active {
-  color: #fff;
-  border-bottom-color: #fff;
+  color: #0bffbf;
 }
 
 /*
- * One Day Punks
+ * Velas Dogs
  */
 
 .brand, .brand:hover {
   font-family: var(--font-family-title);
-  font-style: italic;
   color: var(--primary);
   text-decoration: none;
   position: relative;
@@ -128,9 +131,13 @@ body {
   height: 120%;
 }
 
+.mt-100 {
+   margin-top: 100px;
+  }
+  
 .nav-link {
   font-family: var(--font-family-title);
-  font-style: italic;
+  font-size: 20px;
 }
 
 .upper {
@@ -141,7 +148,6 @@ body {
   font-size: var(--font-size-xxxl);
   font-family: var(--font-family-title);
   font-weight: 700;
-  font-style: italic;
   line-height: var(--line-height-heading);
   margin: var(--size-4) 0;
 }
@@ -160,7 +166,6 @@ body {
   font-size: var(--font-size-xxl);
   font-family: var(--font-family-title);
   font-weight: 700;
-  font-style: italic;
   line-height: var(--line-height-heading);
   margin: var(--size-4) 0;
 }
@@ -183,13 +188,13 @@ body {
   width: 100%;
   cursor: pointer;
   position: relative;
-  color: var(--white);
-  background-color: var(--black);
+  color: var(--primary);
+  background-color: #003399;
   appearance: none;
   border-radius: var(--size-5);
   border: var(--border);
   padding: var(--size-3) var(--size-4);
-  transition: border-color var(--speed);
+  transition: border-color;
   letter-spacing: var(--letter-spacing-sm);
   line-height: inherit;
   font-family: inherit;
@@ -200,7 +205,7 @@ body {
 .search .search-text-input:focus {
   box-shadow: 0 0 0 1px var(--gray-700);
   z-index: 51;
-  border-color: var(--gray);
+  border-color: #0bffbf;
   outline: 0;
 }
 
@@ -266,12 +271,17 @@ body {
   background-color: #000;
   border-radius: 100%;
   max-height: 280px;
+  transition: transform 1s; /* Animation */
+}
+.punk-avatar:hover {
+  transform: scale(1.05); /* (105% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
 .punk-info {
+  margin-top: 10px;
   position: relative;
-  font-family: var(--font-family-title);
-  font-weight: 700;
+  font-family: Nunito;
+  font-weight: 600;
 }
 
 .punk-info svg {
@@ -321,8 +331,9 @@ a:hover .punk-info svg:not(.shadow) {
 .punk-rank {
   color: var(--white); 
   font-family: var(--font-family-title);
-  font-weight: 700;
-  font-size: var(--font-size-lg);
+  font-weight: 600;
+  font-size: large;
+  font-family: Nunito;
 }
 
 .punk-similar-score {
@@ -425,6 +436,13 @@ a:hover .punk-info svg:not(.shadow) {
   top: -1px;
   left: -2px;
 }
+.view-on-icon2 {
+  width: 50px;
+  height: px;
+  position: relative;
+  top: -1px;
+  left: -2px;
+}
 
 .view-on-link, .view-on-link:hover {
   color: var(--white);
@@ -434,16 +452,16 @@ a:hover .punk-info svg:not(.shadow) {
 .tile {
   width: 135px;
   background-color: var(--primary-dark); 
-  border-radius: 10px;
+  border-radius: 4px;
   color: var(--white);
   font-size: var(--font-size-lg);
   margin: 10px;
-  overflow: scroll;
+  overflow:hidden;
   padding: 20px 10px;
 }
 
 .tile h5, .tile h4 {
-  font-family: var(--font-family-title);
+  font-family: Nunito;
   text-align: center;
 }
 
