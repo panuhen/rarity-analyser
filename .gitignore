@@ -65,3 +65,5 @@ typings/
 
 # system
 .DS_Store
+# Local Netlify folder
+.netlify
